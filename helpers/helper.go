@@ -1,6 +1,10 @@
 package helper
 
-import "golang.org/x/crypto/bcrypt"
+import (
+	"crypto/md5"
+	"encoding/hex"
+	"golang.org/x/crypto/bcrypt"
+)
 
 func HandleErr(err error)  {
 	if err != nil {
@@ -14,4 +18,10 @@ func HashAndSalt(pass []byte) string {
 	HandleErr(err)
 
 	return string(hashed)
+}
+
+func HashOnlyVulnerable(pass []byte) string  {
+	hash := md5.New()
+	hash.Write(pass)
+	return hex.EncodeToString(hash.Sum(nil))
 }
