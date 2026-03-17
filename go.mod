@@ -1,10 +1,12 @@
 module github.com/mytrix-technology/go-banking
 
-go 1.13
+go 1.25.0
 
 require (
-	github.com/gorilla/mux v1.7.4
-	github.com/jinzhu/gorm v1.9.12
-	github.com/lib/pq v1.5.2
-	golang.org/x/crypto v0.0.0-20200510223506-06a226fb4e37
+	github.com/gorilla/mux v1.8.1
+	github.com/jinzhu/gorm v1.9.16
+	github.com/lib/pq v1.11.2
+	golang.org/x/crypto v0.49.0
 )
+
+require github.com/jinzhu/inflection v1.0.0 // indirect
